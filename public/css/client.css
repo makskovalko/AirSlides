@@ -1,0 +1,258 @@
+html,
+body {
+    margin: 0;
+    background-color: rgb(250, 250, 250);
+    height: 100%;
+    font-weight: 500;
+    font-family: Century Gothic, Arial, sans-serif;
+    overflow-y: hidden;
+}
+
+#header {
+    height: 8vmin;
+    min-height: 40px;
+    background-color: rgb(26, 26, 26);
+    text-align: center;
+}
+
+#header img {
+    position: relative;
+    height: 4vmin;
+    min-height: 20px;
+    top: 2vmin;
+     -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-drag: none;
+    user-select: none;
+}
+
+#header button {
+    position: relative;
+    top: 1vmin;
+    height: 6vmin;
+    width: 6vmin;
+    border-radius: 0.5vmin;
+    background-color: transparent;
+    border: 0;
+    color: white;
+}
+#header button:focus {
+    outline: 0;
+    border: 0px solid white;
+    border-radius: 5px;
+}
+
+#header button#connection,
+#header button#fullscreen{
+    float: left;
+    left: 2vmin;
+}
+
+#header button#quest_btn {
+    float: right;
+    right: 2vmin;
+}
+
+#header button span {
+    font-size: 3vmin;
+}
+#header button#quest_btn span {
+    font-size: 4vmin;
+}
+
+main {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#like_dislike_wrap {
+    width: 100%;
+    padding: 4%;
+    position: absolute;
+    bottom: 1%;
+    z-index: 3000;
+    display: none;
+}
+
+#like_dislike_wrap button {
+    background-color: transparent;
+    color: white;
+    border: 0;
+    outline: 0;
+    transition: all 0.2s ease;
+}
+#like_dislike_wrap button:hover {
+    transform: scale(1.1);
+}
+#like_dislike_wrap button:active {
+    transform: scale(1);
+}
+
+#like_dislike_wrap button span {
+    font-size: 12vmin;
+}
+
+#like_dislike_wrap #like {
+    float: right;
+    color: green;
+}
+
+#like_dislike_wrap #dislike {
+    float: left;
+    color: darkred;
+}
+#like_dislike_wrap button.inactive {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#frame {
+    width: 100vmin;
+}
+
+#slide {
+    width: 100%;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
+}
+.modal-backdrop {
+    z-index: 0;
+}
+
+#token_modal {
+    top: 7vh;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+#question_modal {
+    top: 7vh;
+}
+
+#token_modal .modal-dialog {
+    width: 350px;
+}
+
+#question_form button {
+ margin-right: 3px;
+ margin-left: 3px;
+}
+
+.modal-content {
+    text-align: center;
+    width: 100%;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.loader_wrap {
+    width: 120px;
+    height: 46px;
+    position: relative;
+    left: calc(50% - 60px);
+    overflow: hidden;
+}
+.loader_wrap img {
+    position: relative;
+    left: -115px;
+    top:-148px;
+    pointer-events: none;
+}
+
+.modal-content #question_form {
+    text-align: left;
+}
+.modal-content #question_form ul {
+    text-align: center;
+    position: relative;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 8px;
+    color: darkred;
+}
+.modal-content input {
+    margin-top: 8px;
+    width: 70%;
+    display: inline-block;
+}
+
+.modal-content form label {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    padding: 1%;
+}
+
+#token_modal .modal-content p {
+    font-size: 20px;
+}
+#token_modal .modal-content input {
+    height: 1.5em;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    width: 120px;
+    position: relative;
+    left: calc(50% - 60px);
+}
+.modal-content button {
+    margin-top: 8px;
+}
+
+#token_modal .modal-content #second_layer {
+    width: 100%;
+}
+
+#token_modal .modal-content input::-webkit-input-placeholder {
+    text-align: center;
+    padding: 0;
+}
+
+.modal-content{
+    padding: 10px;
+}
+
+
+footer {
+    height: 3.5vmin;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 2vmin;
+    padding-left: 1vmin;
+}
+
+@media all and (orientation:portrait) {
+
+}
+
+@media all and (orientation:landscape) {
+
+}

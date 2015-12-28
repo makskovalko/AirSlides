@@ -1,0 +1,57 @@
+doctype html
+html
+   head
+      title AirSlides - Client
+      meta(charset='utf-8')
+      meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height')
+      link(rel='stylesheet', href='css/bootstrap.min.css')
+      link(rel='stylesheet', href='css/client.css')
+   body
+      main#main
+         #frame
+            img#slide(src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAI4749463839610100010000000021F90401000000002C00000000010001000002')
+      #overlay
+         #header
+            button#connection(data-toggle='modal', data-target='#token_modal')
+               span.glyphicon.glyphicon-retweet(aria-hidden='true')
+            // cog link
+            button#fullscreen
+               span.glyphicon.glyphicon-fullscreen(aria-hidden='true')
+            img#logo(src='img/airslides.png')
+            button#quest_btn
+               span.glyphicon.glyphicon-send(aria-hidden='true')
+         #token_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='token_modal')
+            .modal-dialog
+               .modal-content
+                  p Enter presentation token
+                  form#token_form(data-parsley-validate='')
+                     input.form-control(type='text', name='token', placeholder='XXXX', data-parsley-trigger='change', maxlength='4', data-parsley-maxlength='4', data-parsley-maxlength-message='Too long', data-parsley-minlength='4', data-parsley-minlength-message='Too short', data-parsley-type='alphanum', data-parsley-type-message='Token must contain digits and latin letters only.', required='')
+                     .loader_wrap.well(style='display:none')
+                        img(src='img/loader.gif')
+                     button.btn.btn-success(type='submit') Connect
+         #question_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='token_modal')
+            .modal-dialog
+               .modal-content
+                  p(style='font-size:20px;') Ask a question
+                  form#question_form(data-parsley-validate='')
+                     label(for='name') Your name:
+                     input.form-control(type='text', name='name', placeholder='John', data-parsley-trigger='change', maxlength='20', data-parsley-maxlength='20', data-parsley-maxlength-message='Too long', data-parsley-minlength='2', data-parsley-minlength-message='Too short', required='')
+                     label(for='question') Question:
+                     input#question_text.form-control(type='textarea', name='question', placeholder='Up to 140 characters', data-parsley-trigger='change', maxlength='140', data-parsley-maxlength='140', data-parsley-maxlength-message='Too long', data-parsley-minlength='3', data-parsley-minlength-message='Too short', required='')
+                     .loader_wrap.well(style='display:none')
+                        img(src='img/loader.gif')
+                     div(style='text-align: center')
+                        button#cancel_btn.btn.btn-danger(type='button') Cancel
+                        button.btn.btn-success(type='submit') Send
+         #like_dislike_wrap
+            button#like
+               span.glyphicon.glyphicon-thumbs-up(aria-hidden='true')
+            button#dislike
+               span.glyphicon.glyphicon-thumbs-down(aria-hidden='true')
+      footer
+         span © All rights reserved. 2015.
+   script(src='js/jquery-1.11.3.min.js')
+   script(src='js/bootstrap.min.js')
+   script(src='js/parsley.min.js')
+   script(src='js/socket.io-1.3.7.js')
+   script(src='js/client.js')

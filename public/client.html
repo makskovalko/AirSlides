@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AirSlides - Client</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/client.css">
+</head>
+
+<body>
+
+    <main id="main">
+        <div id="frame">
+            <img id="slide" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAI4749463839610100010000000021F90401000000002C00000000010001000002">
+        </div>
+    </main>
+
+    <div id="overlay">
+        <div id="header">
+            <button id="connection" data-toggle="modal" data-target="#token_modal"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button> <!--cog link-->
+            <button id="fullscreen"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></button>
+            <img id="logo" src="img/airslides.png">
+            
+            <button id="quest_btn"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+        </div>
+
+        <div id="token_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="token_modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <p>Enter presentation token</p>
+                    <form id="token_form" data-parsley-validate="">
+
+                        <input type="text" class="form-control" name="token" placeholder="XXXX" data-parsley-trigger="change" maxlength="4" data-parsley-maxlength="4" data-parsley-maxlength-message="Too long" data-parsley-minlength="4" data-parsley-minlength-message="Too short" data-parsley-type="alphanum"	data-parsley-type-message="Token must contain digits and latin letters only." required="">
+
+                        <div style="display:none" class="loader_wrap well">
+                            <img src="img/loader.gif">
+                        </div>
+                        <button type="submit" class="btn btn-success">Connect</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="question_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="token_modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <p style="font-size:20px;">Ask a question</p>
+                    <form id="question_form" data-parsley-validate="">
+
+                        <label for="name">Your name:</label>
+                        <input type="text" class="form-control" name="name" placeholder="John" data-parsley-trigger="change" maxlength="20" data-parsley-maxlength="20" data-parsley-maxlength-message="Too long" data-parsley-minlength="2" data-parsley-minlength-message="Too short" required="">
+
+                        <label for="question">Question:</label>
+                        <input type="textarea" id="question_text" class="form-control" name="question" placeholder="Up to 140 characters" data-parsley-trigger="change" maxlength="140" data-parsley-maxlength="140" data-parsley-maxlength-message="Too long" data-parsley-minlength="3" data-parsley-minlength-message="Too short" required="">
+
+                        <div style="display:none" class="loader_wrap well">
+                            <img src="img/loader.gif">
+                        </div>
+                        <div style="text-align: center">
+
+                            <button type="button" id="cancel_btn" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="btn btn-success">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="like_dislike_wrap">
+            <button id="like"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
+            <button id="dislike"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <span>© All rights reserved. 2015.</span>
+    </footer>
+
+</body>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/parsley.min.js"></script>
+<script src="js/client.js"></script>
+
+</html>
