@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var connection = mongoose.createConnection('mongodb://localhost/airslides');
+var connection = mongoose.createConnection(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||'mongodb://localhost/airslides');
 var autoIncrement = require('mongoose-auto-increment');
 
 autoIncrement.initialize(connection);
