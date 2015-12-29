@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var SlidesDownloader = require('../service/slidesDownloader');
 
-router.post('/slideshare_link', (req, res) => {
+router.post('/slideshare_link', function(req, res) {
     //console.log(req.body.link);
     var link = req.body.link;
     var slidesDownloader = new SlidesDownloader();

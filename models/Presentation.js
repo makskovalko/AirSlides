@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-//var connection = mongoose.createConnection('mongodb://localhost/airslides');
-
+var connection = mongoose.createConnection('mongodb://localhost/airslides');
+/*
 var options = {
     db: { native_parser: true },
     server: { poolSize: 5 },
@@ -8,8 +8,17 @@ var options = {
     user: 'admin',
     pass: 'X6HbdLX6k75R'
 };
+var connection_string = '127.0.0.1:27017/airslides';
+// if OPENSHIFT env variables are present, use the available connection info:
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+    connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+        process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+        process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+        process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+        process.env.OPENSHIFT_APP_NAME;
+}
 
-var connection = mongoose.createConnection('mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/airslides', options);
+var connection = mongoose.createConnection(connection_string, options);*/
 
 var autoIncrement = require('mongoose-auto-increment');
 

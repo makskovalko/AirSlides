@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var md5 = require('md5');
 var session = require('express-session');
-var Speaker = require('../models/speaker');
+var Speaker = require('../models/Speaker');
 var speakerDTO = require('../dto/speakerDTO');
 var Presentation = require('../models/Presentation');
 

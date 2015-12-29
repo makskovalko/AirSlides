@@ -11,14 +11,14 @@ var routes = require('./routes/index');
 var slides = require('./routes/slides');
 var slideshare = require('./routes/slideshare');
 var speaker = require('./routes/speaker');
-var passport = require('passport');
+//var passport = require('passport');
 var speakerDTO = require('./dto/speakerDTO');
 var presentation = require('./routes/presentation');
 var PresentationService = require('./service/PresentationService');
 var Message = require('./models/Message');
 var config = require('./config/config');
 
-require('./config/passport')(passport);
+//require('./config/passport')(passport);
 
 var app = express();
 var io = socketIO();
@@ -42,8 +42,8 @@ app.use(session({secret: 'dfhjdflwkhweihiu231iouhdss'}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'presentations')));
 app.use(require('node-compass')({mode: 'expanded'}));
-app.use(passport.initialize());
-app.use(passport.session());
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 app.use('/', routes);
 app.use('/slides', slides);
@@ -56,9 +56,9 @@ app.use('/session', function(req, res) {
     res.json(req.session.speaker);
 });
 
-require('./routes/oauth/facebook')(app, passport, speakerDTO);
+/*require('./routes/oauth/facebook')(app, passport, speakerDTO);
 require('./routes/oauth/google')(app, passport, speakerDTO);
-require('./routes/oauth/linkedin')(app, passport, speakerDTO);
+require('./routes/oauth/linkedin')(app, passport, speakerDTO);*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
